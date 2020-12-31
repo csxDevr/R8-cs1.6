@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{ED77F24F-5F18-4201-B6B4-EE4E5352EEF2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>R8_base</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <ProjectName>coded by devr null</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+    <TargetName>devr</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBRARYTEMPLATE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;LIBRARYTEMPLATE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NoExtensions</EnableEnhancedInstructionSet>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <GenerateMapFile>true</GenerateMapFile>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="cFont.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="CvarUtils.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="nospread.cpp" />
+    <ClCompile Include="Offset.cpp" />
+    <ClCompile Include="UserMsgs.cpp" />
+    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="ValveSDK\common\interface.cpp" />
+    <ClCompile Include="ValveSDK\misc\parsemsg.cpp" />
+    <ClCompile Include="weaponslist.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cFont.h" />
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="CvarUtils.h" />
+    <ClInclude Include="detours.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="menu.h" />
+    <ClInclude Include="nospread.h" />
+    <ClInclude Include="Offset.h" />
+    <ClInclude Include="PEB.h" />
+    <ClInclude Include="UserMsgs.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="ValveSDK\common\beamdef.h" />
+    <ClInclude Include="ValveSDK\common\cl_entity.h" />
+    <ClInclude Include="ValveSDK\common\com_model.h" />
+    <ClInclude Include="ValveSDK\common\const.h" />
+    <ClInclude Include="ValveSDK\common\con_nprint.h" />
+    <ClInclude Include="ValveSDK\common\crc.h" />
+    <ClInclude Include="ValveSDK\common\cvardef.h" />
+    <ClInclude Include="ValveSDK\common\demo_api.h" />
+    <ClInclude Include="ValveSDK\common\director_cmds.h" />
+    <ClInclude Include="ValveSDK\common\dlight.h" />
+    <ClInclude Include="ValveSDK\common\dll_state.h" />
+    <ClInclude Include="ValveSDK\common\engine_launcher_api.h" />
+    <ClInclude Include="ValveSDK\common\entity_state.h" />
+    <ClInclude Include="ValveSDK\common\entity_types.h" />
+    <ClInclude Include="ValveSDK\common\event_api.h" />
+    <ClInclude Include="ValveSDK\common\event_args.h" />
+    <ClInclude Include="ValveSDK\common\event_flags.h" />
+    <ClInclude Include="ValveSDK\common\exefuncs.h" />
+    <ClInclude Include="ValveSDK\common\hltv.h" />
+    <ClInclude Include="ValveSDK\common\interface.h" />
+    <ClInclude Include="ValveSDK\common\in_buttons.h" />
+    <ClInclude Include="ValveSDK\common\itrackeruser.h" />
+    <ClInclude Include="ValveSDK\common\ivoicetweak.h" />
+    <ClInclude Include="ValveSDK\common\mathlib.h" />
+    <ClInclude Include="ValveSDK\common\netadr.h" />
+    <ClInclude Include="ValveSDK\common\net_api.h" />
+    <ClInclude Include="ValveSDK\common\nowin.h" />
+    <ClInclude Include="ValveSDK\common\particledef.h" />
+    <ClInclude Include="ValveSDK\common\pmtrace.h" />
+    <ClInclude Include="ValveSDK\common\qfont.h" />
+    <ClInclude Include="ValveSDK\common\ref_params.h" />
+    <ClInclude Include="ValveSDK\common\r_efx.h" />
+    <ClInclude Include="ValveSDK\common\screenfade.h" />
+    <ClInclude Include="ValveSDK\common\studio_event.h" />
+    <ClInclude Include="ValveSDK\common\triangleapi.h" />
+    <ClInclude Include="ValveSDK\common\usercmd.h" />
+    <ClInclude Include="ValveSDK\common\weaponinfo.h" />
+    <ClInclude Include="ValveSDK\engine\anorms.h" />
+    <ClInclude Include="ValveSDK\engine\beamdef.h" />
+    <ClInclude Include="ValveSDK\engine\cdll_dll.h" />
+    <ClInclude Include="ValveSDK\engine\cdll_engine_dll.h" />
+    <ClInclude Include="ValveSDK\engine\Cdll_int.h" />
+    <ClInclude Include="ValveSDK\engine\cl_dll.h" />
+    <ClInclude Include="ValveSDK\engine\cl_entity.h" />
+    <ClInclude Include="ValveSDK\engine\const.h" />
+    <ClInclude Include="ValveSDK\engine\crc.h" />
+    <ClInclude Include="ValveSDK\engine\custom.h" />
+    <ClInclude Include="ValveSDK\engine\customentity.h" />
+    <ClInclude Include="ValveSDK\engine\cvardef.h" />
+    <ClInclude Include="ValveSDK\engine\dlight.h" />
+    <ClInclude Include="ValveSDK\engine\edict.h" />
+    <ClInclude Include="ValveSDK\engine\eiface.h" />
+    <ClInclude Include="ValveSDK\engine\entity_state.h" />
+    <ClInclude Include="ValveSDK\engine\entity_types.h" />
+    <ClInclude Include="ValveSDK\engine\event_args.h" />
+    <ClInclude Include="ValveSDK\engine\event_flags.h" />
+    <ClInclude Include="ValveSDK\engine\in_buttons.h" />
+    <ClInclude Include="ValveSDK\engine\keydefs.h" />
+    <ClInclude Include="ValveSDK\engine\particledef.h" />
+    <ClInclude Include="ValveSDK\engine\pmtrace.h" />
+    <ClInclude Include="ValveSDK\engine\pm_defs.h" />
+    <ClInclude Include="ValveSDK\engine\pm_info.h" />
+    <ClInclude Include="ValveSDK\engine\progdefs.h" />
+    <ClInclude Include="ValveSDK\engine\progs.h" />
+    <ClInclude Include="ValveSDK\engine\r_efx.h" />
+    <ClInclude Include="ValveSDK\engine\r_studioint.h" />
+    <ClInclude Include="ValveSDK\engine\shake.h" />
+    <ClInclude Include="ValveSDK\engine\studio.h" />
+    <ClInclude Include="ValveSDK\engine\studio_event.h" />
+    <ClInclude Include="ValveSDK\engine\triangleapi.h" />
+    <ClInclude Include="ValveSDK\engine\usercmd.h" />
+    <ClInclude Include="ValveSDK\engine\util_vector.h" />
+    <ClInclude Include="ValveSDK\engine\weaponinfo.h" />
+    <ClInclude Include="ValveSDK\engine\wrect.h" />
+    <ClInclude Include="ValveSDK\misc\com_model.h" />
+    <ClInclude Include="ValveSDK\misc\parsemsg.h" />
+    <ClInclude Include="weaponslist.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
